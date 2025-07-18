@@ -31,7 +31,7 @@ def classify_task(prompt):
     return None
 
 # --- Streamlit Page Setup ---
-st.set_page_config(page_title="AI Tool Recommender", layout="wide")
+st.set_page_config(page_title="AI Tool Recommendor", layout="wide")
 
 # --- UI Styling ---
 st.markdown("""
