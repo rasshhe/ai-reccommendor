@@ -33,93 +33,94 @@ def classify_task(prompt):
 # --- Streamlit Page Setup ---
 st.set_page_config(page_title="AI Tool Recommender", layout="centered")
 
-# --- Custom Pastel CSS Styling ---
+# --- Custom CSS for Pastel Theme ---
 st.markdown("""
     <style>
-    body {
-        background-color: #fdf6f0;
-        font-family: 'Segoe UI', sans-serif;
-    }
     .stApp {
-        background-color: #fdf6f0;
-        padding: 2rem;
+        background-color: #f3e8ff;  /* lavender pastel */
+        font-family: 'Segoe UI', sans-serif;
     }
     h1 {
         text-align: center;
-        color: #5c5470;
-        font-size: 2.8rem;
-        margin-bottom: 0.5rem;
+        color: #3c2a4d;
+        font-size: 3rem;
     }
     h4 {
         text-align: center;
-        color: #998eac;
+        color: #5c5470;
+        font-size: 1.3rem;
+        margin-top: -1rem;
+    }
+    .stTextInput>label {
         font-size: 1.1rem;
-    }
-    .block-container {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-    }
-    .stTextInput > label {
-        font-weight: 500;
-        color: #4b3c58;
-    }
-    .stButton > button {
-        background-color: #d7c0d0;
-        color: #4b3c58;
-        border: none;
-        padding: 0.5rem 1.5rem;
-        border-radius: 10px;
+        color: #4a3a5a;
         font-weight: 600;
     }
-    .stButton > button:hover {
-        background-color: #c5adc5;
+    .stTextInput input {
+        font-size: 1.1rem;
+        padding: 0.5rem;
     }
-    hr {
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
+    .stButton>button {
+        background-color: #cdaefc;
+        color: #2d1e40;
         border: none;
-        border-top: 1px solid #ddd;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.05rem;
+    }
+    .stButton>button:hover {
+        background-color: #b999f5;
+    }
+    .recommendation-section h5 {
+        color: #3a2d4e;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+        margin-top: 1rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- Title and Description ---
+# --- Header ---
 st.markdown("<h1>AI Tool Recommender</h1>", unsafe_allow_html=True)
-st.markdown("<h4>Find the best AI tools based on your task</h4>", unsafe_allow_html=True)
+st.markdown("<h4>Suggesting the best AI tools based on your task 💡</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # --- Input Field ---
-user_prompt = st.text_input("What do you want to accomplish?", placeholder="e.g., generate an image of a mountain landscape")
+user_prompt = st.text_input("What do you want to accomplish?", placeholder="e.g., write a blog about AI safety")
 
-# --- Recommendation Logic ---
+# --- Logic & Display ---
 if st.button("Find Recommendations"):
     if not user_prompt.strip():
-        st.warning("Please enter a task to receive AI tool recommendations.")
+        st.warning("⚠️ Please enter a task first.")
     else:
         category = classify_task(user_prompt)
         st.markdown("<hr>", unsafe_allow_html=True)
 
         if category and category in ai_db:
-            st.markdown(f"<h4 style='color: #4b3c58;'>Category detected: {category.title()}</h4>", unsafe_allow_html=True)
+            st.markdown(f"<h5>🔍 Category Detected: <b>{category.title()}</b></h5>", unsafe_allow_html=True)
 
-            st.markdown("#### Top Recommendations")
+            # Best tools
+            st.markdown("#### 🌟 Best AI Tools")
             for tool in ai_db[category]["best"]:
                 st.markdown(f"- [{tool['name']}]({tool['url']})")
 
-            st.markdown("#### Other Options")
+            # Middle tools
+            st.markdown("#### 👍 Middle AI Tools")
             for tool in ai_db[category]["middle"]:
                 st.markdown(f"- [{tool['name']}]({tool['url']})")
 
-            st.markdown("#### Least Recommended")
+            # Worst tools
+            st.markdown("#### ⚠️ Least Recommended")
             for tool in ai_db[category]["worst"]:
                 st.markdown(f"- [{tool['name']}]({tool['url']})")
 
         else:
-            st.error("No matching category found. Try rephrasing your task.")
+            st.error("❌ Couldn't find a suitable category. Try rephrasing your task.")
 
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown(
-    "<p style='text-align: center; font-size: 13px; color: #a8a3b0;'>Built by Rashi Raj | Streamlit Deployment</p>",
+    "<p style='text-align: center; font-size: 13px; color: #888;'>Built by Rashi Raj | Streamlit Deployment</p>",
     unsafe_allow_html=True
 )
