@@ -1,130 +1,3 @@
-'''import streamlit as st
-import json
-
-# --- Load AI database from JSON ---
-with open("ai_database.json") as f:
-    ai_db = json.load(f)
-
-# --- Classifier function to guess the category ---
-def classify_task(prompt):
-    prompt = prompt.lower()
-
-    if "email" in prompt:
-        return "email writing"
-
-    if "essay" in prompt or "blog" in prompt:
-        return "essay/blog writing"
-
-    if "legal" in prompt or "contract" in prompt or "agreement" in prompt:
-        return "legal writing"
-
-    if "poem" in prompt or "poetry" in prompt or "creative" in prompt:
-        return "poetry/creative"
-
-    if ("code" in prompt or "script" in prompt) and ("generate" in prompt or "write" in prompt):
-        return "code generation"
-
-    if "debug" in prompt or "fix" in prompt:
-        return "debugging code"
-
-    if ("image" in prompt or "photo" in prompt or "art" in prompt) and "realistic" in prompt:
-        return "photo-realistic image"
-
-    if "image" in prompt or "photo" in prompt or "art" in prompt:
-        return "image generation"
-
-    if "logo" in prompt or "design" in prompt:
-        return "logo/design"
-
-    if "video" in prompt:
-        return "video generation"
-
-    if "audio" in prompt or "music" in prompt:
-        return "audio/music"
-
-    if "voice" in prompt:
-        return "voice generation"
-
-    if "summarize" in prompt or "summary" in prompt:
-        return "summarization"
-
-    if "translate" in prompt or "translation" in prompt:
-        return "translation"
-
-    if "research" in prompt or "question" in prompt or "q&a" in prompt:
-        return "research/q&a"
-
-    if "teach" in prompt or "tutor" in prompt or "education" in prompt:
-        return "tutoring/education"
-
-    if "data" in prompt or "csv" in prompt or "analysis" in prompt:
-        return "data analysis"
-
-    if "presentation" in prompt or "slides" in prompt or "powerpoint" in prompt:
-        return "presentation/slides"
-
-    if "social media" in prompt or "tweet" in prompt or "post" in prompt:
-        return "social media writing"
-
-    if "chatbot" in prompt or "faq" in prompt:
-        return "chatbot building"
-
-    if "generate" in prompt or "generating" in prompt or "create" in prompt or "make" in prompt:
-        return "general generation"
-
-    return None
-
-# --- Streamlit UI ---
-st.set_page_config(page_title="✨ AI Tool Recommender")
-
-st.title("🤖 AI Tool Recommender")
-st.write(
-    """
-    📌 Tell me what you want to do below, and I'll suggest the best AI tools for it.
-    It will show you **Best**, **Middle**, and **Worst** options so you can choose wisely!
-    """
-)
-
-# --- User input box ---
-user_prompt = st.text_input("📝 What do you want to do?")
-
-# --- Button to get recommendations ---
-if st.button("🔍 Suggest AI Tools"):
-    if not user_prompt.strip():
-        st.warning("⚠️ Please enter what you want to do!")
-    else:
-        st.success(f"✅ You want to: {user_prompt}")
-
-        category = classify_task(user_prompt)
-
-        if category and category in ai_db:
-            st.subheader(f"🔎 Category detected: {category.title()}")
-
-            best = ai_db[category].get("best", [])
-            middle = ai_db[category].get("middle", [])
-            worst = ai_db[category].get("worst", [])
-
-            # Display in columns
-            col1, col2, col3 = st.columns(3)
-
-            with col1:
-                st.markdown("🌟 **Best AI Tools**")
-                for tool in best:
-                    st.write(f"- {tool}")
-
-            with col2:
-                st.markdown("👍 **Middle AI Tools**")
-                for tool in middle:
-                    st.write(f"- {tool}")
-
-            with col3:
-                st.markdown("⚠️ **Worst AI Tools**")
-                for tool in worst:
-                    st.write(f"- {tool}")
-
-        else:
-            st.error("❌ Sorry! I couldn't find any recommendations for that task. Try describing it differently.")
-'''
 import streamlit as st
 import json
 
@@ -157,42 +30,96 @@ def classify_task(prompt):
         return "presentation/slides"
     return None
 
-# --- Streamlit UI ---
-st.set_page_config(page_title="✨ AI Tool Recommender with Links")
+# --- Streamlit Page Setup ---
+st.set_page_config(page_title="AI Tool Recommender", layout="centered")
 
-st.title("🤖 AI Tool Recommender")
-st.write(
-    """
-    📌 Tell me what you want to do below, and I'll suggest the **best AI tools**.
-    Each suggestion is a direct link to the tool!
-    """
-)
+# --- Custom Pastel CSS Styling ---
+st.markdown("""
+    <style>
+    body {
+        background-color: #fdf6f0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .stApp {
+        background-color: #fdf6f0;
+        padding: 2rem;
+    }
+    h1 {
+        text-align: center;
+        color: #5c5470;
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+    }
+    h4 {
+        text-align: center;
+        color: #998eac;
+        font-size: 1.1rem;
+    }
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+    .stTextInput > label {
+        font-weight: 500;
+        color: #4b3c58;
+    }
+    .stButton > button {
+        background-color: #d7c0d0;
+        color: #4b3c58;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+    .stButton > button:hover {
+        background-color: #c5adc5;
+    }
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        border: none;
+        border-top: 1px solid #ddd;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-user_prompt = st.text_input("📝 What do you want to do?")
+# --- Title and Description ---
+st.markdown("<h1>AI Tool Recommender</h1>", unsafe_allow_html=True)
+st.markdown("<h4>Find the best AI tools based on your task</h4>", unsafe_allow_html=True)
+st.markdown("<hr>", unsafe_allow_html=True)
 
-if st.button("🔍 Suggest AI Tools"):
+# --- Input Field ---
+user_prompt = st.text_input("What do you want to accomplish?", placeholder="e.g., generate an image of a mountain landscape")
+
+# --- Recommendation Logic ---
+if st.button("Find Recommendations"):
     if not user_prompt.strip():
-        st.warning("⚠️ Please enter what you want to do!")
+        st.warning("Please enter a task to receive AI tool recommendations.")
     else:
-        st.success(f"✅ You want to: {user_prompt}")
-
         category = classify_task(user_prompt)
+        st.markdown("<hr>", unsafe_allow_html=True)
 
         if category and category in ai_db:
-            st.subheader(f"🔎 Category detected: {category.title()}")
+            st.markdown(f"<h4 style='color: #4b3c58;'>Category detected: {category.title()}</h4>", unsafe_allow_html=True)
 
-            st.write("✅ **Best AI tools:**")
+            st.markdown("#### Top Recommendations")
             for tool in ai_db[category]["best"]:
-                st.markdown(f"- 🌟 [{tool['name']}]({tool['url']})")
+                st.markdown(f"- [{tool['name']}]({tool['url']})")
 
-            st.write("✅ **Middle AI tools:**")
+            st.markdown("#### Other Options")
             for tool in ai_db[category]["middle"]:
-                st.markdown(f"- 👍 [{tool['name']}]({tool['url']})")
+                st.markdown(f"- [{tool['name']}]({tool['url']})")
 
-            st.write("✅ **Worst AI tools:**")
+            st.markdown("#### Least Recommended")
             for tool in ai_db[category]["worst"]:
-                st.markdown(f"- ⚠️ [{tool['name']}]({tool['url']})")
+                st.markdown(f"- [{tool['name']}]({tool['url']})")
 
         else:
-            st.error("❌ Sorry! I couldn't find any recommendations for that task. Try describing it differently.")
+            st.error("No matching category found. Try rephrasing your task.")
 
+# --- Footer ---
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown(
+    "<p style='text-align: center; font-size: 13px; color: #a8a3b0;'>Built by Rashi Raj | Streamlit Deployment</p>",
+    unsafe_allow_html=True
+)
