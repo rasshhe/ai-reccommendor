@@ -33,12 +33,12 @@ def classify_task(prompt):
 # --- Streamlit Page Setup ---
 st.set_page_config(page_title="AI Tool Recommender", layout="wide")
 
-# --- Cute Warm CSS Theme ---
+# --- UI Styling ---
 st.markdown("""
     <style>
     body {
-        background-color: #3e2f27;
-        background-image: linear-gradient(145deg, #3e2f27 60%, #4e342e 100%);
+        background-color: #2e1f17;
+        background-image: linear-gradient(145deg, #2e1f17 60%, #3b2a22 100%);
         font-family: 'Segoe UI', sans-serif;
     }
     .stApp {
@@ -46,31 +46,32 @@ st.markdown("""
     }
     h1 {
         text-align: center;
-        color: #fbeee0;
-        font-size: 3.5rem;
-        letter-spacing: 1px;
+        color: #f5ede0;
+        font-size: 3.8rem;
+        letter-spacing: 1.2px;
+        font-weight: bold;
     }
     h4 {
         text-align: center;
-        color: #ffe4c4;
-        font-size: 1.4rem;
+        color: #fcecd6;
+        font-size: 1.5rem;
         margin-top: -1.2rem;
         font-weight: 400;
     }
     .stTextInput > label {
         font-size: 1.15rem;
-        color: #f2d3b3;
+        color: #fce3cc;
         font-weight: 600;
     }
     .stTextInput input {
         font-size: 1.1rem;
         padding: 0.6rem;
         border-radius: 10px;
-        background-color: #fffaf0;
+        background-color: #fff8f2;
         border: 1px solid #d7ccc8;
     }
     .stButton > button {
-        background-color: #a1887f;
+        background-color: #a9746e;
         color: white;
         font-weight: 600;
         border: none;
@@ -80,49 +81,50 @@ st.markdown("""
         margin-top: 10px;
     }
     .stButton > button:hover {
-        background-color: #8d6e63;
+        background-color: #875a54;
     }
     .tool-section {
-        background-color: #fef6ec;
+        background-color: #fef3e6;
         border-radius: 15px;
         padding: 2rem;
         margin-bottom: 2rem;
-        box-shadow: 0 0 20px rgba(60, 45, 30, 0.1);
+        box-shadow: 0 0 20px rgba(100, 80, 60, 0.15);
     }
     .tool-section h5 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         color: #4e342e;
         margin-bottom: 1rem;
+        font-weight: bold;
     }
     .tool-list {
-        font-size: 1.05rem;
-        line-height: 1.8;
+        font-size: 1.15rem;
+        line-height: 1.9;
         color: #3e2723;
         margin-left: 1rem;
     }
     hr {
         border: none;
-        border-top: 1px solid #d7ccc8;
+        border-top: 1px solid #cbbfb5;
         margin: 20px 0;
     }
     .footer {
         text-align: center;
         font-size: 0.9rem;
-        color: #c8b6a6;
+        color: #d2bba0;
         margin-top: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- Header Section ---
+# --- Header ---
 st.markdown("<h1>AI Tool Recommender</h1>", unsafe_allow_html=True)
 st.markdown("<h4>Find the perfect AI tool for your next task ✨</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
-# --- Input ---
-user_prompt = st.text_input("What do you want to accomplish?", placeholder="e.g., summarize research paper")
+# --- Input Field ---
+user_prompt = st.text_input("What do you want to accomplish?", placeholder="e.g., summarize a research paper")
 
-# --- Tool Display Logic ---
+# --- Tool Recommender Logic ---
 if st.button("Find Recommendations"):
     if not user_prompt.strip():
         st.warning("⚠️ Please enter a task first.")
@@ -154,10 +156,10 @@ if st.button("Find Recommendations"):
             st.markdown('</div>', unsafe_allow_html=True)
 
             st.markdown('</div>', unsafe_allow_html=True)
-
         else:
             st.error("❌ Couldn't find a suitable category. Try rephrasing your task.")
 
 # --- Footer ---
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<div class='footer'>Made with ☕ by Rashi Raj | Fall Theme Edition 🍂</div>", unsafe_allow_html=True)
+
