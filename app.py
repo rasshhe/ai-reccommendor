@@ -119,7 +119,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Header ---
-st.markdown("<h1>AI Tool Recommender</h1>", unsafe_allow_html=True)
+st.markdown("<h1>AI Recommendor</h1>", unsafe_allow_html=True)
 st.markdown("<h4>Find the perfect AI tool for your next task ✨</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 
