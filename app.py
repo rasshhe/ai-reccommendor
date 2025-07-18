@@ -58,18 +58,20 @@ st.markdown("""
         margin-top: -1.2rem;
         font-weight: 400;
     }
-    .stTextInput > label {
-        font-size: 1.15rem;
+   .stTextInput > label {
+       font-size: 1.15rem;
         color: #fce3cc;
-        font-weight: 600;
-    }
-    .stTextInput input {
-        font-size: 1.1rem;
+         font-weight: 600;
+   }
+   .stTextInput input {
+       font-size: 1.1rem;
         padding: 0.6rem;
-        border-radius: 10px;
-        background-color: #fff8f2;
-        border: 1px solid #d7ccc8;
+         border-radius: 10px;
+         background-color: #fef6ec;   
+         color: #3e2723;              
+         border: 1px solid #d7ccc8;
     }
+
     .stButton > button {
         background-color: #a9746e;
         color: white;
