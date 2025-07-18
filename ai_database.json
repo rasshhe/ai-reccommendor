@@ -1,0 +1,243 @@
+{
+  "email writing": {
+    "best": [
+      {"name": "ChatGPT", "url": "https://chat.openai.com"},
+      {"name": "Claude", "url": "https://claude.ai"}
+    ],
+    "middle": [
+      {"name": "Gemini", "url": "https://gemini.google.com"},
+      {"name": "Copy.ai", "url": "https://www.copy.ai"}
+    ],
+    "worst": [
+      {"name": "RandomAI", "url": "https://example.com"}
+    ]
+  },
+  "essay/blog writing": {
+    "best": [
+      {"name": "ChatGPT", "url": "https://chat.openai.com"},
+      {"name": "Claude", "url": "https://claude.ai"}
+    ],
+    "middle": [
+      {"name": "Jasper", "url": "https://www.jasper.ai"}
+    ],
+    "worst": [
+      {"name": "GenericWriterAI", "url": "https://example.com"}
+    ]
+  },
+  "legal writing": {
+    "best": [
+      {"name": "Spellbook", "url": "https://www.spellbook.legal"},
+      {"name": "ChatGPT", "url": "https://chat.openai.com"}
+    ],
+    "middle": [
+      {"name": "DoNotPay", "url": "https://donotpay.com"}
+    ],
+    "worst": [
+      {"name": "GenericLegalBot", "url": "https://example.com"}
+    ]
+  },
+  "poetry/creative": {
+    "best": [
+      {"name": "ChatGPT", "url": "https://chat.openai.com"},
+      {"name": "Sudowrite", "url": "https://www.sudowrite.com"}
+    ],
+    "middle": [
+      {"name": "NovelAI", "url": "https://novelai.net"}
+    ],
+    "worst": [
+      {"name": "RandomPoemGen", "url": "https://example.com"}
+    ]
+  },
+  "code generation": {
+    "best": [
+      {"name": "GitHub Copilot", "url": "https://github.com/features/copilot"},
+      {"name": "ChatGPT", "url": "https://chat.openai.com"}
+    ],
+    "middle": [
+      {"name": "Replit AI", "url": "https://replit.com/site/ai"}
+    ],
+    "worst": [
+      {"name": "RandomCodeGen", "url": "https://example.com"}
+    ]
+  },
+  "debugging code": {
+    "best": [
+      {"name": "ChatGPT", "url": "https://chat.openai.com"},
+      {"name": "Phind", "url": "https://www.phind.com"}
+    ],
+    "middle": [
+      {"name": "Gemini", "url": "https://gemini.google.com"}
+    ],
+    "worst": [
+      {"name": "BasicDebugBot", "url": "https://example.com"}
+    ]
+  },
+  "image generation": {
+    "best": [
+      {"name": "MidJourney", "url": "https://www.midjourney.com"},
+      {"name": "DALL-E", "url": "https://openai.com/dall-e"}
+    ],
+    "middle": [
+      {"name": "Stable Diffusion", "url": "https://stablediffusionweb.com"}
+    ],
+    "worst": [
+      {"name": "Craiyon", "url": "https://www.craiyon.com"}
+    ]
+  },
+  "photo-realistic image": {
+    "best": [
+      {"name": "DALL-E 3", "url": "https://openai.com/dall-e"},
+      {"name": "MidJourney", "url": "https://www.midjourney.com"}
+    ],
+    "middle": [
+      {"name": "Leonardo AI", "url": "https://leonardo.ai"}
+    ],
+    "worst": [
+      {"name": "Craiyon", "url": "https://www.craiyon.com"}
+    ]
+  },
+  "logo/design": {
+    "best": [
+      {"name": "Canva", "url": "https://www.canva.com"},
+      {"name": "Looka", "url": "https://looka.com"}
+    ],
+    "middle": [
+      {"name": "Hatchful", "url": "https://hatchful.shopify.com"}
+    ],
+    "worst": [
+      {"name": "RandomLogoMaker", "url": "https://example.com"}
+    ]
+  },
+  "video generation": {
+    "best": [
+      {"name": "Pika Labs", "url": "https://pika.art"},
+      {"name": "RunwayML", "url": "https://runwayml.com"}
+    ],
+    "middle": [
+      {"name": "Synthesia", "url": "https://www.synthesia.io"}
+    ],
+    "worst": [
+      {"name": "RandomVideoBot", "url": "https://example.com"}
+    ]
+  },
+  "audio/music": {
+    "best": [
+      {"name": "Aiva", "url": "https://www.aiva.ai"},
+      {"name": "Suno AI", "url": "https://suno.ai"}
+    ],
+    "middle": [
+      {"name": "Soundraw", "url": "https://soundraw.io"}
+    ],
+    "worst": [
+      {"name": "GenericMusicGen", "url": "https://example.com"}
+    ]
+  },
+  "voice generation": {
+    "best": [
+      {"name": "ElevenLabs", "url": "https://elevenlabs.io"},
+      {"name": "PlayHT", "url": "https://play.ht"}
+    ],
+    "middle": [
+      {"name": "Murf AI", "url": "https://murf.ai"}
+    ],
+    "worst": [
+      {"name": "BasicVoiceBot", "url": "https://example.com"}
+    ]
+  },
+  "summarization": {
+    "best": [
+      {"name": "ChatGPT", "url": "https://chat.openai.com"},
+      {"name": "Claude", "url": "https://claude.ai"}
+    ],
+    "middle": [
+      {"name": "Gemini", "url": "https://gemini.google.com"}
+    ],
+    "worst": [
+      {"name": "RandomSummarizer", "url": "https://example.com"}
+    ]
+  },
+  "translation": {
+    "best": [
+      {"name": "DeepL", "url": "https://www.deepl.com"},
+      {"name": "Google Translate", "url": "https://translate.google.com"}
+    ],
+    "middle": [
+      {"name": "Microsoft Translator", "url": "https://translator.microsoft.com"}
+    ],
+    "worst": [
+      {"name": "RandomTranslator", "url": "https://example.com"}
+    ]
+  },
+  "research/q&a": {
+    "best": [
+      {"name": "Perplexity AI", "url": "https://www.perplexity.ai"},
+      {"name": "ChatGPT", "url": "https://chat.openai.com"}
+    ],
+    "middle": [
+      {"name": "Gemini", "url": "https://gemini.google.com"}
+    ],
+    "worst": [
+      {"name": "GenericAnswerBot", "url": "https://example.com"}
+    ]
+  },
+  "tutoring/education": {
+    "best": [
+      {"name": "Khanmigo", "url": "https://www.khanacademy.org/khan-labs"},
+      {"name": "ChatGPT", "url": "https://chat.openai.com"}
+    ],
+    "middle": [
+      {"name": "Gemini", "url": "https://gemini.google.com"}
+    ],
+    "worst": [
+      {"name": "GenericTutorBot", "url": "https://example.com"}
+    ]
+  },
+  "data analysis": {
+    "best": [
+      {"name": "ChatGPT (Code Interpreter)", "url": "https://chat.openai.com"},
+      {"name": "Gemini Advanced", "url": "https://gemini.google.com"}
+    ],
+    "middle": [
+      {"name": "DataRobot", "url": "https://www.datarobot.com"}
+    ],
+    "worst": [
+      {"name": "RandomDataBot", "url": "https://example.com"}
+    ]
+  },
+  "presentation/slides": {
+    "best": [
+      {"name": "Beautiful.AI", "url": "https://www.beautiful.ai"},
+      {"name": "Gamma App", "url": "https://gamma.app"}
+    ],
+    "middle": [
+      {"name": "Canva Presentations", "url": "https://www.canva.com"}
+    ],
+    "worst": [
+      {"name": "GenericSlidesMaker", "url": "https://example.com"}
+    ]
+  },
+  "social media writing": {
+    "best": [
+      {"name": "Copy.ai", "url": "https://www.copy.ai"},
+      {"name": "ChatGPT", "url": "https://chat.openai.com"}
+    ],
+    "middle": [
+      {"name": "Jasper", "url": "https://www.jasper.ai"}
+    ],
+    "worst": [
+      {"name": "RandomSocialBot", "url": "https://example.com"}
+    ]
+  },
+  "chatbot building": {
+    "best": [
+      {"name": "Dialogflow", "url": "https://cloud.google.com/dialogflow"},
+      {"name": "Botpress", "url": "https://botpress.com"}
+    ],
+    "middle": [
+      {"name": "ManyChat", "url": "https://manychat.com"}
+    ],
+    "worst": [
+      {"name": "GenericBotBuilder", "url": "https://example.com"}
+    ]
+  }
+}
