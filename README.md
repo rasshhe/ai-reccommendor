@@ -6,7 +6,7 @@ This project is a lightweight AI tool recommendation system that suggests the be
 
 ## Features  
 Task Classification  
-- Accepts any user-defined task as input (e.g., "write an essay", "remove background")  
+- Accepts any user-defined task as input (e.g., "write an essay", "generate a photo") 
 - Classifies the task into predefined categories stored in a JSON file  
 
 AI Tool Recommendation  
